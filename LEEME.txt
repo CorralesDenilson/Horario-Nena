@@ -1,0 +1,20 @@
+HORARIO NENA — MODO ENTREGA 💗
+
+Esta es la versión preparada para entregar.
+
+ARCHIVOS:
+- index.html
+- style.css
+- script.js
+
+PARA USARLA EN UNA PC:
+1. Coloca los 3 archivos en la misma carpeta.
+2. Abre index.html con Live Server (recomendado) o abre el archivo directamente en el navegador.
+
+IMPORTANTE:
+- Esta versión utiliza un almacenamiento separado llamado "horarioNenaEntrega".
+- Al entregarla, comenzará vacía en el navegador de la persona que la reciba.
+- Las materias, tareas y recordatorios que se agreguen se guardan automáticamente en ese navegador.
+- La copia de seguridad permite guardar/restaurar los datos mediante un archivo JSON.
+
+No hace falta instalar ningún programa adicional si se abre directamente en un navegador moderno.

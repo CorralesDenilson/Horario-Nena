@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Horario Nena 💗</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CORAZONES DECORATIVOS -->
+    <div id="corazones"></div>
+
+
+    <!-- =========================
+         SORPRESA INICIAL
+    ========================== -->
+
+    <div id="bienvenida-sorpresa" class="bienvenida-sorpresa">
+
+        <div class="sorpresa-contenido">
+
+            <div class="corazon-sorpresa">
+                💗
+            </div>
+
+            <h2>
+                Hola, Nena ❤️
+            </h2>
+
+            <p>
+                Esta página fue hecha para la mejor ingeniera civil
+            </p>
+
+            <button
+                id="boton-entrar"
+                class="boton-principal"
+            >
+                Entrar 💕
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
+
+    <header class="encabezado">
+
+        <h1>
+            Mi horario 💗
+        </h1>
+
+        <p>
+            Organiza tus clases, tareas y proyectos ✨
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
+    <section
+        id="dashboard"
+        class="dashboard"
+    >
+
+        <div class="bienvenida">
+
+            <h2>
+                ¡Hola, guapaaa! 💕
+            </h2>
+
+            <p>
+                Aquí tienes un resumen semanal✨
+            </p>
+
+        </div>
+
+
+        <!-- ESTADÍSTICAS -->
+
+        <div class="estadisticas">
+
+            <div class="tarjeta-estadistica">
+
+                <span class="icono-estadistica">
+                    📚
+                </span>
+
+                <div>
+
+                    <span
+                        class="numero"
+                        id="total-materias"
+                    >
+                        0
+                    </span>
+
+                    <span class="texto-estadistica">
+                        Materias
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="tarjeta-estadistica">
+
+                <span class="icono-estadistica">
+                    📝
+                </span>
+
+                <div>
+
+                    <span
+                        class="numero"
+                        id="total-pendientes"
+                    >
+                        0
+                    </span>
+
+                    <span class="texto-estadistica">
+                        Pendientes
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="tarjeta-estadistica urgente">
+
+                <span class="icono-estadistica">
+                    🔥
+                </span>
+
+                <div>
+
+                    <span
+                        class="numero"
+                        id="total-urgentes"
+                    >
+                        0
+                    </span>
+
+                    <span class="texto-estadistica">
+                        Urgentes
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="tarjeta-estadistica completado">
+
+                <span class="icono-estadistica">
+                    ✅
+                </span>
+
+                <div>
+
+                    <span
+                        class="numero"
+                        id="total-completadas"
+                    >
+                        0
+                    </span>
+
+                    <span class="texto-estadistica">
+                        Completadas
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROGRESO -->
+
+        <div class="progreso-contenedor">
+
+            <div class="progreso-texto">
+
+                <span>
+                    Progreso de tareas
+                </span>
+
+                <strong id="porcentaje-progreso">
+                    0%
+                </strong>
+
+            </div>
+
+            <div class="barra-progreso">
+
+                <div
+                    id="barra-progreso-interna"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUSCADOR -->
+
+        <div class="panel-buscador">
+            <div class="cabecera-buscador">
+                <div>
+                    <h3>🔎 Buscar</h3>
+                    <p>Encuentra una materia o tarea rápidamente.</p>
+                </div>
+            </div>
+            <div class="campo-buscador">
+                <input type="search" id="buscador-principal" placeholder="Ej. Cálculo, examen, proyecto..." autocomplete="off" aria-label="Buscar materias y tareas">
+                <button type="button" id="boton-limpiar-busqueda" class="boton-limpiar-busqueda oculto" aria-label="Limpiar búsqueda" title="Limpiar búsqueda">×</button>
+            </div>
+            <div id="resultados-busqueda" class="resultados-busqueda">
+                <p class="mensaje-busqueda">Escribe algo para buscar. 💗</p>
+            </div>
+        </div>
+
+
+        <!-- RESUMEN DE LA SEMANA -->
+
+        <div class="resumen-semana">
+
+            <h3>
+                📊 Mi semana
+            </h3>
+
+            <p id="texto-resumen-semana">
+                Esta semana comienza aquí. 💕
+            </p>
+
+            <div id="detalle-semana" class="detalle-semana"></div>
+
+        </div>
+
+
+        <!-- DASHBOARD -->
+
+        <div class="dashboard-columnas">
+
+            <div class="panel-dashboard">
+
+                <h3>
+                    📅 Clases de hoy
+                </h3>
+
+                <div id="clases-hoy">
+
+                    <p class="mensaje-vacio">
+                        No hay clases para hoy.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel-dashboard">
+
+                <h3>
+                    ⏰ Próximas entregas
+                </h3>
+
+                <div id="proximas-entregas">
+
+                    <p class="mensaje-vacio">
+                        No hay tareas pendientes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECORDATORIOS -->
+
+        <div class="panel-recordatorios">
+
+            <div class="cabecera-recordatorios">
+
+                <div>
+
+                    <h3>
+                        💡 Mis recordatorios
+                    </h3>
+
+                    <p>
+                        Cosas importantes que no quieres olvidar.
+                    </p>
+
+                </div>
+
+                <button
+                    id="boton-agregar-recordatorio"
+                    class="boton-principal"
+                >
+                    + Agregar
+                </button>
+
+            </div>
+
+
+            <div id="lista-recordatorios">
+
+                <p class="mensaje-vacio">
+                    No tienes recordatorios todavía. 💕
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARTA ESCONDIDA -->
+
+        <div class="carta-secreta-contenedor">
+
+            <button
+                id="boton-carta"
+                class="boton-carta"
+            >
+                ¿Algo más? 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- OPCIONES DE DATOS -->
+
+    <section class="opciones-datos">
+        <details>
+            <summary>⚙️ Opciones de datos</summary>
+
+            <div class="panel-copia-seguridad">
+                <div class="cabecera-copia-seguridad">
+                    <div>
+                        <h3>💾 Mi copia de seguridad</h3>
+                        <p>Guarda tu horario para poder recuperarlo cuando quieras.</p>
+                    </div>
+                </div>
+
+                <div class="acciones-copia-seguridad">
+                    <button id="boton-exportar-datos" class="boton-secundario" type="button">
+                        📥 Guardar copia
+                    </button>
+                    <button id="boton-importar-datos" class="boton-secundario" type="button">
+                        📤 Restaurar copia
+                    </button>
+                    <input type="file" id="archivo-importar-datos" accept=".json,application/json" hidden>
+                </div>
+
+                <p class="nota-copia-seguridad">
+                    La copia incluye materias, tareas y recordatorios. 💗
+                </p>
+            </div>
+        </details>
+    </section>
+
+
+    <!-- =========================
+         DIAS
+    ========================== -->
+
+    <nav
+        class="dias"
+        id="selector-dias"
+    >
+
+        <button
+            class="dia activo"
+            data-dia="lunes"
+        >
+            Lunes
+        </button>
+
+        <button
+            class="dia"
+            data-dia="martes"
+        >
+            Martes
+        </button>
+
+        <button
+            class="dia"
+            data-dia="miercoles"
+        >
+            Miércoles
+        </button>
+
+        <button
+            class="dia"
+            data-dia="jueves"
+        >
+            Jueves
+        </button>
+
+        <button
+            class="dia"
+            data-dia="viernes"
+        >
+            Viernes
+        </button>
+
+        <button
+            class="dia"
+            data-dia="sabado"
+        >
+            Sábado
+        </button>
+
+        <button
+            class="dia"
+            data-dia="domingo"
+        >
+            Domingo
+        </button>
+
+    </nav>
+
+
+    <!-- =========================
+         HORARIO
+    ========================== -->
+
+    <main id="contenido-horario">
+
+        <section class="horario">
+
+            <div class="titulo-dia">
+
+                <div>
+
+                    <h2 id="titulo-dia">
+                        Lunes
+                    </h2>
+
+                    <p>
+                        Tus clases de este día
+                    </p>
+
+                </div>
+
+                <button
+                    id="boton-agregar-materia"
+                    class="boton-principal"
+                >
+                    + Agregar materia
+                </button>
+
+            </div>
+
+
+            <div id="lista-materias"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FORMULARIO MATERIA
+    ========================== -->
+
+    <section
+        id="formulario-materia"
+        class="modal-contenedor oculto"
+    >
+
+        <div class="modal">
+
+            <button
+                id="cerrar-formulario-materia"
+                class="cerrar"
+            >
+                ×
+            </button>
+
+            <h2 id="titulo-formulario-materia">
+                Agregar materia
+            </h2>
+
+
+            <form id="form-materia">
+
+                <label>
+                    Nombre de la materia
+
+                    <input
+                        type="text"
+                        id="nombre-materia"
+                        placeholder="Ej. Matemática"
+                        required
+                    >
+                </label>
+
+
+                <div class="fila-formulario">
+
+                    <label>
+                        Hora de inicio
+
+                        <input
+                            type="time"
+                            id="hora-inicio"
+                            required
+                        >
+                    </label>
+
+
+                    <label>
+                        Hora de finalización
+
+                        <input
+                            type="time"
+                            id="hora-final"
+                            required
+                        >
+                    </label>
+
+                </div>
+
+
+                <label>
+                    Profesor
+
+                    <input
+                        type="text"
+                        id="profesor"
+                        placeholder="Ej. Ricardo"
+                    >
+                </label>
+
+
+                <label>
+                    Aula
+
+                    <input
+                        type="text"
+                        id="aula"
+                        placeholder="Ej. Aula 21"
+                    >
+                </label>
+
+
+                <label>
+                    Nota o descripción (opcional)
+
+                    <textarea
+                        id="descripcion-materia"
+                        placeholder="Llevar calculadora"
+                        rows="3"
+                        maxlength="180"
+                    ></textarea>
+                </label>
+
+
+                <label>
+                    Color de la materia
+
+                    <select id="color-materia">
+
+                        <option value="rosa">
+                            Rosa 💗
+                        </option>
+
+                        <option value="azul">
+                            Azul 💙
+                        </option>
+
+                        <option value="morado">
+                            Morado 💜
+                        </option>
+
+                        <option value="verde">
+                            Verde 💚
+                        </option>
+
+                        <option value="naranja">
+                            Naranja 🧡
+                        </option>
+
+                        <option value="amarillo">
+                            Amarillo 💛
+                        </option>
+
+                        <option value="turquesa">
+                            Turquesa 🩵
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="boton-principal boton-guardar"
+                >
+                    Guardar materia
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PANEL TAREAS
+    ========================== -->
+
+    <section
+        id="panel-tareas"
+        class="panel-tareas oculto"
+    >
+
+        <div class="cabecera-tareas">
+
+            <button
+                id="cerrar-tareas"
+                class="boton-volver"
+            >
+                ← Volver
+            </button>
+
+            <div>
+
+                <h2 id="nombre-materia-tareas">
+                    Materia
+                </h2>
+
+                <p id="info-materia-tareas"></p>
+
+            </div>
+
+        </div>
+
+
+        <div class="contenedor-tareas">
+
+            <div class="cabecera-lista-tareas">
+
+                <h3>
+                    Tareas y pendientes
+                </h3>
+
+                <button
+                    id="boton-agregar-tarea"
+                    class="boton-principal"
+                >
+                    + Agregar pendiente
+                </button>
+
+            </div>
+
+
+            <div id="lista-tareas">
+
+                <p class="mensaje-vacio">
+                    No hay tareas pendientes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FORMULARIO TAREA
+    ========================== -->
+
+    <section
+        id="formulario-tarea"
+        class="modal-contenedor oculto"
+    >
+
+        <div class="modal">
+
+            <button
+                id="cerrar-formulario-tarea"
+                class="cerrar"
+            >
+                ×
+            </button>
+
+            <h2>
+                Agregar pendiente
+            </h2>
+
+
+            <form id="form-tarea">
+
+                <label>
+                    Nombre
+
+                    <input
+                        type="text"
+                        id="nombre-tarea"
+                        placeholder="Ej. Hacer ejercicios"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Fecha de entrega
+
+                    <input
+                        type="date"
+                        id="fecha-tarea"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Tipo
+
+                    <select id="tipo-tarea">
+
+                        <option value="Tarea">
+                            📝 Tarea
+                        </option>
+
+                        <option value="Proyecto">
+                            📁 Proyecto
+                        </option>
+
+                        <option value="Examen">
+                            📚 Examen
+                        </option>
+
+                        <option value="Quiz">
+                            ❓ Quiz
+                        </option>
+
+                        <option value="Otro">
+                            📌 Otro
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Prioridad
+
+                    <select id="prioridad-tarea">
+
+                        <option value="alta">
+                            🔴 Alta
+                        </option>
+
+                        <option value="media">
+                            🟡 Media
+                        </option>
+
+                        <option value="baja">
+                            🟢 Baja
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="boton-principal boton-guardar"
+                >
+                    Guardar pendiente
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FORMULARIO RECORDATORIO
+    ========================== -->
+
+    <section
+        id="formulario-recordatorio"
+        class="modal-contenedor oculto"
+    >
+
+        <div class="modal">
+
+            <button
+                id="cerrar-formulario-recordatorio"
+                class="cerrar"
+            >
+                ×
+            </button>
+
+            <h2>
+                💡 Nuevo recordatorio
+            </h2>
+
+
+            <form id="form-recordatorio">
+
+                <label>
+                    Recordatorio
+
+                    <input
+                        type="text"
+                        id="texto-recordatorio"
+                        placeholder="Ej. Llevar calculadora"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Fecha
+
+                    <input
+                        type="date"
+                        id="fecha-recordatorio"
+                    >
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="boton-principal boton-guardar"
+                >
+                    Guardar recordatorio
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CARTA
+    ========================== -->
+
+    <section
+        id="carta-secreta"
+        class="modal-contenedor oculto"
+    >
+
+        <div class="carta">
+
+            <button
+                id="cerrar-carta"
+                class="cerrar"
+            >
+                ×
+            </button>
+
+            <div class="carta-corazon">
+                💗
+            </div>
+
+            <h2>
+                Para ti, Nena
+            </h2>
+
+            <p>
+                Nunca te rindas, serás la mejor
+                ingeniera del mundo
+            </p>
+
+            <div class="carta-firma">
+                ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MENSAJE FINAL
+    ========================== -->
+
+    <footer class="mensaje-amor">
+
+        <div>
+            💗 TE AMO MI INGE 💗
+        </div>
+
+        <span>
+            Siempre orgulloso de ti ❤️
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
